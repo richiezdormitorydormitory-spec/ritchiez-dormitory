@@ -1,0 +1,1 @@
+<?php require_once '../config/database.php';require_once '../includes/session.php';requireLogin();$conn->prepare("UPDATE reservations SET status='Cancelled' WHERE reservation_id=? AND user_id=? AND status='Pending'")->execute([$_GET['id'],$_SESSION['user_id']]);header('Location: dashboard.php');exit;?>
